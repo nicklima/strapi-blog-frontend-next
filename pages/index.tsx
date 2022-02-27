@@ -22,9 +22,12 @@ export async function getStaticProps() {
   const [articlesRes, categoriesRes, homepageRes] = await Promise.all([
     fetchAPI("/articles", { populate: "*" }),
     fetchAPI("/categories", { populate: "*" }),
-    fetchAPI("/homepage", {
+    fetchAPI("/global", {
       populate: {
-        seo: { populate: "*" },
+        favicon: "*",
+        defaultSeo: {
+          populate: "*",
+        },
       },
     }),
   ])
