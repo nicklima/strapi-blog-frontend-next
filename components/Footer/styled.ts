@@ -1,22 +1,45 @@
 import styled from "styled-components"
+import { theme } from "styles/theme"
 
 export const Footer = styled.footer`
-  background: #fff;
   align-items: center;
-  border-top: 1px solid #eaeaea;
+  background: ${theme.white};
   display: flex;
-  height: 100px;
-  justify-content: center;
+  flex-direction: column;
+  height: 120px;
+  justify-content: space-between;
+  width: 100%;
+`
+
+export const Credits = styled.div`
+  background: ${theme.bg};
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px;
+  text-align: center;
   width: 100%;
 
   a {
-    align-items: center;
-    display: flex;
-    flex-grow: 1;
-    justify-content: center;
+    color: ${theme.white};
+    line-height: 1.5;
+
+    &:visited,
+    &:hover {
+      color: ${theme.white};
+    }
   }
 `
-export const Logo = styled.span`
-  height: 1em;
-  margin-left: 0.5rem;
+
+export const Logos = styled.div`
+  display: flex;
+  height: 80px;
+  max-width: 90%;
+  width: 320px;
+`
+
+export const Logo = styled.a`
+  align-items: center;
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
 `

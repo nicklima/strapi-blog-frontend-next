@@ -4,6 +4,7 @@
 
 - [About](#about)
 - [Preview](#preview)
+- [Credits](#credits)
 - [Technologies](#technologies)
 - [Dependencies](#dependencies)
 - [Installation](#installation)
@@ -24,6 +25,38 @@ This project is the **frontend** application (`next.js` hosted on Vercel) of a H
 
 [Click here](https://strapi-blog-frontend-next.vercel.app) to view the frontend project demo.\
 [Click here](https://github.com/nicklima/strapi-blog-cms) To see the backend project repository.
+
+## Credits
+
+### Photos/Images
+
+All photos are from [Unsplash](https://unsplash.com).
+
+- Son Goku by [Jeet Dhanoa](https://unsplash.com/@jeetdhanoa?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+
+- Cappuccino by [Nathan Dumlao](https://unsplash.com/@nate_dumlao?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+
+- Xbox joystick by [Javier Martínez](https://unsplash.com/@cjdante?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+
+- Playstation controlers by [Igor Karimov](https://unsplash.com/@ingvar_erik?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+
+- Flat screen monitor and black ceramic mug by [Tudor Baciu](https://unsplash.com/@baciutudor?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+
+- Sunset by [Dave Hoefler](https://unsplash.com/@davehoefler?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+
+- Boats in Lake by [Luca Bravo](https://unsplash.com/@lucabravo?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+
+- Amazon Echo and lamp by [Leon Dewiwje](https://unsplash.com/@elodiso?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+
+- Mr. Meeseeks by [Jakub Dziubak](https://unsplash.com/@jckbck?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+
+- Legend of Zelda action figures by [Ryan Quintal](https://unsplash.com/@ryanquintal?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+
+- Vue.js code by [Emil Priver](https://unsplash.com/@emilpriver?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+
+- Bird at snow by [Dennis Buchner](https://unsplash.com/@baitman?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+
+- Git branch by [Yancy Min](https://unsplash.com/@yancymin?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
 ## Technologies
 
