@@ -2,11 +2,11 @@
 
 const nextConfig = {
   reactStrictMode: true,
+  compiler: {
+    styledComponents: true,
+  },
   images: {
     loader: "default",
-    compiler: {
-      styledComponents: true,
-    },
     domains: [
       "localhost",
       "herokuapp.com",
