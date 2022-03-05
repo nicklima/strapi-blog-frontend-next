@@ -5,7 +5,7 @@ import Links from "components/Links"
 import { Email, Instagram, Facebook, Linkedin, Twitter } from "icons"
 
 const Author = ({ data }: any) => {
-  const { picture, name, email, about, social } = data.attributes
+  const { picture, name, email, about, social, slug } = data.attributes
 
   const getLinks = (n: string) => {
     switch (n) {
@@ -30,7 +30,9 @@ const Author = ({ data }: any) => {
         <ImageStrapi image={picture} layout="fill" />
       </Styled.Picture>
       <Styled.Info>
-        <Styled.Title>{name}</Styled.Title>
+        <Styled.Title>
+          <Links to={`/authors/${slug}`}>{name}</Links>
+        </Styled.Title>
         <Styled.About>{about}</Styled.About>
       </Styled.Info>
       {social && (
