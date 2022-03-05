@@ -4,6 +4,9 @@ const nextConfig = {
   reactStrictMode: true,
   images: {
     loader: "default",
+    compiler: {
+      styledComponents: true,
+    },
     domains: [
       "localhost",
       "herokuapp.com",
