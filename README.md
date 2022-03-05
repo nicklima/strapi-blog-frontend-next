@@ -1,8 +1,15 @@
 # Next.js Blog with Strapi Headless CMS
 
+\
+<img src="screenshot.png" />
+
+\
+This project is the **frontend** application (`next.js` hosted on Vercel) of a Headless blog using `Strapi` as CMS (hosted on Heroku) and with image management on `Cloudinary`.
+
+This starter is based on [Next.js Blog Starter](https://github.com/strapi/strapi-starter-next-blog) and was create to be an option of starter with Styled Components + TypeScript.
+
 ## Table of contents
 
-- [About](#about)
 - [Preview](#preview)
 - [Credits](#credits)
 - [Technologies](#technologies)
@@ -12,14 +19,9 @@
   - [Install Dependencies](#install-dependencies)
   - [Running The Project](#running-the-project)
   - [Build The Project](#build-the-project)
-
-## About
-
-\
-<img src="screenshot.png" />
-
-\
-This project is the **frontend** application (`next.js` hosted on Vercel) of a Headless blog using `Strapi` as CMS (hosted on Heroku) and with image management on Cloudinary.
+- [About Next.js](#about-next)
+- [About Strapi](#about-strapi)
+- [License](#license)
 
 ## Preview
 
@@ -28,9 +30,7 @@ This project is the **frontend** application (`next.js` hosted on Vercel) of a H
 
 ## Credits
 
-### Photos/Images
-
-All photos are from [Unsplash](https://unsplash.com).
+The photos are from [Unsplash](https://unsplash.com) and [Strapi](https://strapi.io).
 
 - Son Goku by [Jeet Dhanoa](https://unsplash.com/@jeetdhanoa?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
@@ -57,6 +57,8 @@ All photos are from [Unsplash](https://unsplash.com).
 - Bird at snow by [Dennis Buchner](https://unsplash.com/@baitman?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
 - Git branch by [Yancy Min](https://unsplash.com/@yancymin?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+
+- Strapi image by [Strapi Blog](https://strapi.io/blog/announcing-strapi-v4)
 
 ## Technologies
 
@@ -128,4 +130,12 @@ Your app is ready to be deployed!
 
 ## About Next
 
-Visit <a aria-label="next.js learn" href="https://nextjs.org/learn">https://nextjs.org/learn</a> to get started with Next.js or Visit [https://nextjs.org/docs](https://nextjs.org/docs) to view the full documentation.
+Visit <a aria-label="next.js learn" href="https://nextjs.org/learn">https://nextjs.org/learn</a> to get started with Next.js or visit [https://nextjs.org/docs](https://nextjs.org/docs) to view the full documentation.
+
+## About Strapi
+
+Check the [Strapi quick start](https://docs.strapi.io/developer-docs/latest/getting-started/quick-start.html) to get started with Strapi or visit [Strapi Docs](https://docs.strapi.io/developer-docs/latest/getting-started/introduction.html) to view the full documentation.
+
+## License
+
+MIT © [Nick Lima](https://github.com/nicklima)
