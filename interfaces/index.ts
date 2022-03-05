@@ -31,3 +31,14 @@ export interface ILinks {
   to: string
   target?: string
 }
+
+export interface ITheme {
+  white: string
+  bg: string
+  text: string
+  colors: {
+    primary: string
+    secondary: string
+    tertiary: string
+  }
+}

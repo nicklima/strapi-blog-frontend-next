@@ -1,13 +1,4 @@
-interface ITheme {
-  white: string
-  bg: string
-  text: string
-  colors: {
-    primary: string
-    secondary: string
-    tertiary: string
-  }
-}
+import { ITheme } from "interfaces"
 
 export const theme: ITheme = {
   white: "#fff",

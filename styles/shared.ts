@@ -31,16 +31,3 @@ export const Container = styled.div`
   padding: 0 1.5rem;
   width: 100%;
 `
-export const ReadMore = styled.a`
-  background: linear-gradient(
-    to right,
-    #3dd0d8 0%,
-    rgba(124, 105, 227, 0.64) 100%
-  );
-  border-radius: 10px;
-  border: 0;
-  font-size: 14px;
-  font-weight: 700;
-  text-transform: uppercase;
-  transition: all 0.3s ease-out;
-`
