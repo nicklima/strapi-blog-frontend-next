@@ -5,12 +5,11 @@ import { IStrapiImage } from "interfaces"
 const ImageStrapi = ({ image, layout, width, height }: IStrapiImage) => {
   const { alternativeText } = image.data.attributes
 
+  const imgSrc = getStrapiMedia(image)
   const imgW = width ? width : image.data.attributes.width
   const imgH = height ? height : image.data.attributes.height
 
-  const loader = () => {
-    return getStrapiMedia(image)
-  }
+  const loader = () => `${imgSrc}?w=${imgW}&q=75`
 
   if (layout === "fill") {
     return (
@@ -18,7 +17,7 @@ const ImageStrapi = ({ image, layout, width, height }: IStrapiImage) => {
         loader={loader}
         layout="fill"
         objectFit="cover"
-        src={getStrapiMedia(image)}
+        src={imgSrc}
         alt={alternativeText || ""}
       />
     )
@@ -31,7 +30,7 @@ const ImageStrapi = ({ image, layout, width, height }: IStrapiImage) => {
       width={imgW}
       height={imgH}
       objectFit="cover"
-      src={getStrapiMedia(image)}
+      src={imgSrc}
       alt={alternativeText || ""}
     />
   )
