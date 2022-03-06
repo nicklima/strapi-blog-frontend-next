@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/google-font-display */
 import React, { ReactElement } from "react"
 import Document, {
   Html,
@@ -11,7 +10,6 @@ import Document, {
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
     const initialProps = await Document.getInitialProps(ctx)
-
     return initialProps
   }
 
