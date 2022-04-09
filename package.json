@@ -12,7 +12,7 @@
     "lint:fix": "next lint --fix"
   },
   "dependencies": {
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "next": "latest",
     "qs": "^6.10.1",
     "react": "^17.0.2",
