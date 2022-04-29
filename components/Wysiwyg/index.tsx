@@ -1,7 +1,7 @@
 import * as Styled from "./styled"
 
 const Wysiwyg = ({ content }: any) => {
-  return <Styled.Wysiwyg source={content} escapeHtml={false} />
+  return <Styled.Wysiwyg>{content}</Styled.Wysiwyg>
 }
 
 export default Wysiwyg

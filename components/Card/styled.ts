@@ -1,6 +1,4 @@
 import styled from "styled-components"
-import Moment from "react-moment"
-
 import { theme } from "styles/theme"
 
 export const Card = styled.div`
@@ -55,7 +53,7 @@ export const Category = styled.div`
   font-family: var(--font-heading);
 `
 
-export const Date = styled(Moment)`
+export const Date = styled.time`
   color: ${theme.colors.tertiary};
   font-family: var(--font-heading);
 `

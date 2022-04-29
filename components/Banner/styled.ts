@@ -1,7 +1,4 @@
 import styled from "styled-components"
-import ReactMarkdown from "react-markdown"
-import Moment from "react-moment"
-
 import { theme } from "styles/theme"
 
 export const Banner = styled.div`
@@ -61,7 +58,7 @@ export const PostDetails = styled.div`
   padding-top: 20px;
 `
 
-export const Date = styled(Moment)``
+export const Date = styled.time``
 
 export const PostDetailsLine = styled.div`
   color: ${theme.text};
