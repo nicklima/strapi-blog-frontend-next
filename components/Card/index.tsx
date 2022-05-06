@@ -1,3 +1,5 @@
+import Moment from "react-moment"
+
 import Links from "components/Links"
 import ImageStrapi from "components/ImageStrapi"
 import { AuthorIcon } from "icons"
@@ -28,7 +30,9 @@ const Card = ({ article }: any) => {
           <Styled.Category>
             <Links to={`/category/${catSlug}`}>{catName}</Links>
           </Styled.Category>
-          <Styled.Date format="DD MMM, YYYY">{post.published_at}</Styled.Date>
+          <Styled.Date>
+            <Moment format="DD MMM, YYYY">{post.published_at}</Moment>
+          </Styled.Date>
         </Styled.Grid>
         <Styled.Title>
           <Links to={`/article/${post.slug}`}>{post.title}</Links>

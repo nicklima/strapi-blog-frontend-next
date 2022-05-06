@@ -1,3 +1,5 @@
+import Moment from "react-moment"
+
 import ImageStrapi from "components/ImageStrapi"
 import Links from "components/Links"
 
@@ -16,8 +18,10 @@ const Banner = ({ author, article }: any) => {
           <Styled.PostDetails>
             <Styled.PostDetailsLine>
               <CalendarIcon />
-              <Styled.Date format="MMM Do YYYY">
-                {article.attributes.published_at}
+              <Styled.Date>
+                <Moment format="MMM Do YYYY">
+                  {article.attributes.published_at}
+                </Moment>
               </Styled.Date>
             </Styled.PostDetailsLine>
             <Styled.PostDetailsLine>
