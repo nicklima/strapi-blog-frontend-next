@@ -3,13 +3,13 @@ import { theme } from "styles/theme"
 
 export default createGlobalStyle`
   @font-face {
-	font-family: 'Staatliches';
-	font-style: normal;
-	font-weight: 400;
-	src: local('Staatliches Regular'),
+    font-family: 'Staatliches';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Staatliches Regular'),
          local('Staatliches-Regular'),
          url('/font/families/Staatliches/Staatliches-Regular.woff2') format('woff2');
-	font-display: swap;
+    font-display: swap;
   }
 
   :root {
