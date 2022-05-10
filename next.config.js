@@ -5,6 +5,9 @@ const nextConfig = {
   compiler: {
     styledComponents: true,
   },
+  env: {
+    cloudname: "hjnxmwsxk",
+  },
   images: {
     deviceSizes: [320, 768, 1204, 1200, 1330, 1920, 2048, 3840],
     formats: ["image/avif", "image/webp"],
