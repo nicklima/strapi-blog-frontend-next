@@ -37,18 +37,14 @@ class MyDocument extends Document {
 
   render(): ReactElement {
     return (
-      <Html lang="pt-BR">
+      <Html lang="en-US">
         <Head>
           <meta name="description" content="" />
-          <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link
-            rel="preconnect"
-            href="https://fonts.gstatic.com"
-            crossOrigin="true"
-          />
-          <link
-            href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap"
-            rel="stylesheet"
+            rel="preload"
+            href="/font/families/Staatliches/Staatliches-Regular.woff2"
+            as="font"
+            crossOrigin="anonymous"
           />
         </Head>
         <body>
