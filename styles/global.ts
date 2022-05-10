@@ -2,11 +2,23 @@ import { createGlobalStyle } from "styled-components"
 import { theme } from "styles/theme"
 
 export default createGlobalStyle`
+  @font-face {
+	font-family: 'Staatliches';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Staatliches Regular'),
+         local('Staatliches-Regular'),
+         url('/font/families/Staatliches/Staatliches-Regular.woff2') format('woff2');
+	font-display: swap;
+  }
+
   :root {
-    --font-default: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-    --font-code: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace;
+    --font-default: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial,
+    sans-serif;
+    --font-code: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
+    "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro", "Fira Mono",
+    "Droid Sans Mono", "Courier New", monospace;
     --font-heading: Staatliches;
   }
 
