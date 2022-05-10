@@ -16,7 +16,7 @@ export const Nav = styled.nav`
   @media screen and (min-width: 768px) {
     display: grid;
     grid-gap: 30px;
-    grid-template-columns: 100px auto;
+    grid-template-columns: 180px auto;
     justify-content: space-between;
   }
 `

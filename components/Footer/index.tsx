@@ -10,7 +10,14 @@ const Footer = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Image src="/vercel.svg" alt="Vercel Logo" width={90} height={35} />
+          <Image
+            src="/vercel.svg"
+            alt="Vercel Logo"
+            width="90"
+            height="35"
+            loading="lazy"
+            layout="fill"
+          />
         </Styled.Logo>
 
         <Styled.Logo
@@ -18,7 +25,14 @@ const Footer = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Image src="/nextjs.svg" alt="Next.js Logo" width={90} height={35} />
+          <Image
+            src="/nextjs.svg"
+            alt="Next.js Logo"
+            width="90"
+            height="35"
+            loading="lazy"
+            layout="fill"
+          />
         </Styled.Logo>
 
         <Styled.Logo
@@ -26,7 +40,14 @@ const Footer = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Image src="/strapi.svg" alt="Strapi Logo" width={90} height={35} />
+          <Image
+            src="/strapi.svg"
+            alt="Strapi Logo"
+            width="90"
+            height="35"
+            loading="lazy"
+            layout="fill"
+          />
         </Styled.Logo>
       </Styled.Logos>
       <Styled.Credits>

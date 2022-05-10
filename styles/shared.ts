@@ -5,7 +5,7 @@ export const Main = styled.main`
   min-height: 80vh;
 `
 
-export const Title = styled.h1`
+export const Title = styled.h2`
   color: ${theme.text};
   font-family: Staatliches;
   font-size: 50px;
@@ -30,4 +30,12 @@ export const Container = styled.div`
   max-width: 1140px;
   padding: 0 1.5rem;
   width: 100%;
+`
+export const HiddenText = styled.span`
+  height: 1px;
+  left: 0px;
+  overflow: hidden;
+  position: absolute;
+  top: -500px;
+  width: 1px;
 `

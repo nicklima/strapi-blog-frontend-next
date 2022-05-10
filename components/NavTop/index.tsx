@@ -1,6 +1,6 @@
 import { ICategories } from "interfaces"
 
-import { Container } from "styles/shared"
+import { Container, HiddenText } from "styles/shared"
 import { BlogLogo } from "icons"
 import * as Styled from "./styled"
 
@@ -10,6 +10,7 @@ const Nav = ({ categories }: any) => {
       <Container>
         <Styled.Nav>
           <Styled.NavLink to="/">
+            <HiddenText>Go to homepage</HiddenText>
             <BlogLogo />
           </Styled.NavLink>
           <Styled.List>
