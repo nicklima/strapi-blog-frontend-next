@@ -12,6 +12,7 @@
     "lint:fix": "next lint --fix"
   },
   "dependencies": {
+    "cloudinary-build-url": "^0.2.4",
     "moment": "^2.29.3",
     "next": "^12.1.6",
     "qs": "^6.10.3",
