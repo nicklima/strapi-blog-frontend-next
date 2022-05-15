@@ -40,8 +40,6 @@ class MyDocument extends Document {
       <Html lang="en-US">
         <Head>
           <meta name="description" content="" />
-          <meta content="#fff" name="theme-color" />
-          <meta content="#000000" name="msapplication-TileColor" />
           <link href="/site.webmanifest" rel="manifest" />
           <link
             color="#000000"
