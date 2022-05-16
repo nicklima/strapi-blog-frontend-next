@@ -1,4 +1,9 @@
 import { ReactNode } from "react"
+
+export interface IGlobalContext {
+  defaultSeo?: object
+  siteName?: String
+}
 export interface IMedia {
   data: {
     attributes: {

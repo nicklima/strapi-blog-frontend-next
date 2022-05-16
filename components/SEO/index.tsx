@@ -1,12 +1,9 @@
 import Head from "next/head"
 import { useContext } from "react"
+
+import { IGlobalContext } from "interfaces"
 import { GlobalContext } from "pages/_app"
 import { getStrapiMedia } from "lib/media"
-
-interface IGlobalContext {
-  defaultSeo?: object
-  siteName?: String
-}
 
 const Seo = ({ seo }: any) => {
   const { defaultSeo, siteName } = useContext<IGlobalContext>(GlobalContext)
