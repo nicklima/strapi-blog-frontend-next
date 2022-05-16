@@ -38,3 +38,7 @@ yarn-error.log*
 
 # jetbrains
 .idea
+
+# pwa
+public/sw.js*
+public/workbox*

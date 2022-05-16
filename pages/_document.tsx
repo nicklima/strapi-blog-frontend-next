@@ -40,6 +40,12 @@ class MyDocument extends Document {
       <Html lang="en-US">
         <Head>
           <meta name="description" content="" />
+          <link href="/site.webmanifest" rel="manifest" />
+          <link
+            color="#000000"
+            href="/icons/safari-pinned-tab.svg"
+            rel="mask-icon"
+          />
           <link
             rel="preload"
             href="/font/families/Staatliches/Staatliches-Regular.woff2"

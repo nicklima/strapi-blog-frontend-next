@@ -1,19 +1,26 @@
-/** @type {import('next').NextConfig} */
+const withPlugins = require('next-compose-plugins');
+const withPWA = require('next-pwa');
+const runtimeCaching = require('next-pwa/cache');
 
-const nextConfig = {
-  reactStrictMode: true,
-  compiler: {
-    styledComponents: true,
-  },
-  env: {
-    cloudname: "hjnxmwsxk",
-  },
-  images: {
-    deviceSizes: [320, 768, 1204, 1200, 1330, 1920, 2048, 3840],
-    formats: ["image/avif", "image/webp"],
-    loader: "default",
-    domains: ["localhost", "res.cloudinary.com", "cloudinary.com"],
-  },
-}
-
-module.exports = nextConfig
+module.exports = withPlugins([
+  [withPWA], {
+    reactStrictMode: true,
+    compiler: {
+      styledComponents: true,
+    },
+    env: {
+      cloudname: "hjnxmwsxk",
+    },
+    images: {
+      deviceSizes: [320, 768, 1204, 1200, 1330, 1920, 2048, 3840],
+      formats: ["image/avif", "image/webp"],
+      loader: "default",
+      domains: ["localhost", "res.cloudinary.com", "cloudinary.com"],
+    },
+    pwa: {
+      dest: "public",
+      runtimeCaching,
+      cacheOnFrontEndNav: true
+    },
+  }
+]);
