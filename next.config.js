@@ -1,9 +1,14 @@
-const withPlugins = require('next-compose-plugins');
-const withPWA = require('next-pwa');
-const runtimeCaching = require('next-pwa/cache');
+const withPlugins = require("next-compose-plugins")
+const withPWA = require("next-pwa")
+const runtimeCaching = require("next-pwa/cache")
+const withBundleAnalyzer = require("@next/bundle-analyzer")({
+  enabled: process.env.ANALYZE === "true",
+})
 
 module.exports = withPlugins([
-  [withPWA], {
+  [withBundleAnalyzer],
+  [withPWA],
+  {
     reactStrictMode: true,
     compiler: {
       styledComponents: true,
@@ -20,7 +25,7 @@ module.exports = withPlugins([
     pwa: {
       dest: "public",
       runtimeCaching,
-      cacheOnFrontEndNav: true
+      cacheOnFrontEndNav: true,
     },
-  }
-]);
+  },
+])

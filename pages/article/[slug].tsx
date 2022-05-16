@@ -1,7 +1,10 @@
+import dynamic from "next/dynamic"
+
 import Layout from "components/Layout"
-import Author from "components/Author"
-import Wysiwyg from "components/Wysiwyg"
-import Banner from "components/Banner"
+
+const Author = dynamic(() => import("components/Author"))
+const Wysiwyg = dynamic(() => import("components/Wysiwyg"))
+const Banner = dynamic(() => import("components/Banner"))
 
 import { fetchAPI } from "lib/api"
 import { Container, Section } from "styles/shared"

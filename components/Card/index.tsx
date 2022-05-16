@@ -1,9 +1,10 @@
 import Moment from "react-moment"
+import dynamic from "next/dynamic"
 
-import Links from "components/Links"
-import ImageStrapi from "components/ImageStrapi"
+const Links = dynamic(() => import("components/Links"))
+const ImageStrapi = dynamic(() => import("components/ImageStrapi"))
+
 import { AuthorIcon } from "icons"
-
 import * as Styled from "./styled"
 
 const Card = ({ article }: any) => {

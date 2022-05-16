@@ -1,8 +1,10 @@
-import ImageStrapi from "components/ImageStrapi"
-import * as Styled from "./styled"
+import dynamic from "next/dynamic"
 
-import Links from "components/Links"
+const ImageStrapi = dynamic(() => import("components/ImageStrapi"))
+const Links = dynamic(() => import("components/Links"))
+
 import { Email, Instagram, Facebook, Linkedin, Twitter } from "icons"
+import * as Styled from "./styled"
 
 const Author = ({ data }: any) => {
   const { picture, name, email, about, social, slug } = data.attributes

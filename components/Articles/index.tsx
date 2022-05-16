@@ -1,6 +1,7 @@
 import React from "react"
-import Card from "components/Card"
+import dynamic from "next/dynamic"
 
+const Card = dynamic(() => import("components/Card"))
 import * as Styled from "./styled"
 
 const Articles = ({ articles }: any) => {
