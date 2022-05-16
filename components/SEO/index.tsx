@@ -24,10 +24,9 @@ const Seo = ({ seo }: any) => {
 
   return (
     <Head>
-      // ToDo: Grab these values from Strapi
+      {/* ToDo: Grab these values from Strapi */}
       <meta content="#fff" name="theme-color" />
       <meta content="#000" name="msapplication-TileColor" />
-
       {fullSeo.metaTitle && (
         <>
           <title>{fullSeo.metaTitle}</title>
