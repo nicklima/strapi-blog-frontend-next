@@ -1,8 +1,10 @@
 import { ReactNode } from "react"
+import dynamic from "next/dynamic"
 
-import Nav from "components/NavTop"
-import Seo from "components/SEO"
-import Footer from "components/Footer"
+const Nav = dynamic(() => import("components/NavTop"))
+const Seo = dynamic(() => import("components/SEO"))
+const Footer = dynamic(() => import("components/Footer"))
+
 import { Main } from "styles/shared"
 
 const Layout = ({

@@ -1,5 +1,7 @@
+import dynamic from "next/dynamic"
+
 import Layout from "components/Layout"
-import Articles from "components/Articles"
+const Articles = dynamic(() => import("components/Articles"))
 
 import { fetchAPI } from "lib/api"
 import { Container, Section, Title } from "styles/shared"

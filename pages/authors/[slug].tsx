@@ -1,6 +1,9 @@
+import dynamic from "next/dynamic"
+
 import Layout from "components/Layout"
-import Author from "components/Author"
-import Articles from "components/Articles"
+
+const Author = dynamic(() => import("components/Author"))
+const Articles = dynamic(() => import("components/Articles"))
 
 import { fetchAPI } from "lib/api"
 import { Container, Section } from "styles/shared"
