@@ -1,3 +1,4 @@
+const isDev = process.env.NODE_ENV === "development"
 const withPlugins = require("next-compose-plugins")
 const withPWA = require("next-pwa")
 const runtimeCaching = require("next-pwa/cache")
@@ -12,6 +13,7 @@ module.exports = withPlugins([
     reactStrictMode: true,
     compiler: {
       styledComponents: true,
+      removeConsole: !isDev,
     },
     env: {
       cloudname: "hjnxmwsxk",
@@ -23,6 +25,7 @@ module.exports = withPlugins([
       domains: ["localhost", "res.cloudinary.com", "cloudinary.com"],
     },
     pwa: {
+      disable: isDev,
       dest: "public",
       runtimeCaching,
       cacheOnFrontEndNav: true,
