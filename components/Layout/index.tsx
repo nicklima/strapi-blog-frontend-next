@@ -5,24 +5,18 @@ const Nav = dynamic(() => import("components/NavTop"))
 const Seo = dynamic(() => import("components/SEO"))
 const Footer = dynamic(() => import("components/Footer"))
 
+import { ISEO } from "interfaces"
 import { Main } from "styles/shared"
 
-const Layout = ({
-  children,
-  seo,
-  categories,
-}: {
-  children: ReactNode
-  seo: any
-  categories: any
-}) => {
+const Layout = ({ children, seo }: { children: ReactNode; seo: ISEO }) => {
   return (
     <>
-      <Seo seo={seo} categories={categories} />
-      <Nav categories={categories} />
+      <Seo seo={seo} />
+      <Nav />
       <Main>{children}</Main>
       <Footer />
     </>
   )
 }
+
 export default Layout

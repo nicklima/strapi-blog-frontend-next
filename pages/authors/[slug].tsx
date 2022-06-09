@@ -8,16 +8,15 @@ const Articles = dynamic(() => import("components/Articles"))
 import { fetchAPI } from "lib/api"
 import { Container, Section } from "styles/shared"
 
-const AuthorPage = ({ author, articles, categories }: any) => {
+const AuthorPage = ({ author, articles }: any) => {
   const seo = {
-    metaTitle: author.attributes.name,
-    metaDescription: author.attributes.description,
-    shareImage: author?.attributes?.picture,
+    metaTitle: author.name,
     article: true,
+    ...author.seo,
   }
 
   return (
-    <Layout seo={seo} categories={categories.data}>
+    <Layout seo={seo}>
       <Section>
         <Container>
           <Author data={author} />
@@ -48,6 +47,7 @@ export async function getStaticProps({ params }: any) {
     },
     populate: "*",
     social: { populate: "*" },
+    seo: { populate: "*" },
   })
 
   const articlesRes = await fetchAPI("/articles", {
@@ -56,13 +56,11 @@ export async function getStaticProps({ params }: any) {
     },
     populate: "*",
   })
-  const categoriesRes = await fetchAPI("/categories")
 
   return {
     props: {
-      author: authorRes.data[0],
+      author: authorRes.data[0].attributes,
       articles: articlesRes,
-      categories: categoriesRes,
     },
     revalidate: 1,
   }

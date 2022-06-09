@@ -6,18 +6,19 @@ const Articles = dynamic(() => import("components/Articles"))
 import { fetchAPI } from "lib/api"
 import { Container, Section, Title } from "styles/shared"
 
-const Category = ({ category, categories }: any) => {
-  const seo = {
-    metaTitle: category.attributes.name,
-    metaDescription: `All ${category.attributes.name} articles`,
+const Category = ({ category }: { category: any }) => {
+  const { seo, name, articles } = category
+  const seoObj = {
+    metaTitle: name,
+    ...seo,
   }
 
   return (
-    <Layout seo={seo} categories={categories.data}>
+    <Layout seo={seoObj}>
       <Section>
         <Container>
-          <Title>{category.attributes.name}</Title>
-          <Articles articles={category.attributes.articles.data} />
+          <Title>{name}</Title>
+          <Articles articles={articles?.data} />
         </Container>
       </Section>
     </Layout>
@@ -43,18 +44,17 @@ export async function getStaticProps({ params }: any) {
   const matchingCategories = await fetchAPI("/categories", {
     filters: { slug: params.slug },
     populate: {
+      seo: {
+        populate: "*",
+      },
       articles: {
         populate: "*",
       },
     },
   })
-  const allCategories = await fetchAPI("/categories")
 
   return {
-    props: {
-      category: matchingCategories.data[0],
-      categories: allCategories,
-    },
+    props: { category: matchingCategories.data[0].attributes },
     revalidate: 1,
   }
 }

@@ -1,10 +1,14 @@
-import { ICategories } from "interfaces"
+import { useContext } from "react"
+
+import { GlobalContext } from "lib/global"
+import { ICategories, IGlobalContext } from "interfaces"
 
 import { Container, HiddenText } from "styles/shared"
 import { BlogLogo } from "icons"
 import * as Styled from "./styled"
 
-const Nav = ({ categories }: any) => {
+const Nav = () => {
+  const { categories } = useContext(GlobalContext) as IGlobalContext
   return (
     <Styled.Header>
       <Container>
@@ -14,7 +18,7 @@ const Nav = ({ categories }: any) => {
             <BlogLogo />
           </Styled.NavLink>
           <Styled.List>
-            {categories.map((category: ICategories) => {
+            {categories?.map((category: ICategories) => {
               return (
                 <Styled.ListItem key={category.id}>
                   <Styled.NavLink to={`/category/${category.attributes.slug}`}>

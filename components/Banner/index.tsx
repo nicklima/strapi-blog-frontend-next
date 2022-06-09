@@ -14,28 +14,26 @@ const Banner = ({ author, article }: any) => {
     <Styled.Banner>
       <Styled.BannerInfo>
         <Container>
-          <Styled.Title>{article.attributes.title}</Styled.Title>
-          <Styled.SubTitle>{article.attributes.description}</Styled.SubTitle>
+          <Styled.Title>{article.title}</Styled.Title>
+          <Styled.SubTitle>{article.description}</Styled.SubTitle>
           <Styled.PostDetails>
             <Styled.PostDetailsLine>
               <CalendarIcon />
               <Styled.Date>
-                <Moment format="MMM Do YYYY">
-                  {article.attributes.published_at}
-                </Moment>
+                <Moment format="MMM Do YYYY">{article.published_at}</Moment>
               </Styled.Date>
             </Styled.PostDetailsLine>
             <Styled.PostDetailsLine>
               <AuthorIcon width="15" height="15" />
-              <Links to={`/authors/${author.data.attributes.slug}`}>
-                <Styled.Author>{author.data.attributes.name}</Styled.Author>
+              <Links to={`/authors/${author.slug}`}>
+                <Styled.Author>{author.name}</Styled.Author>
               </Links>
             </Styled.PostDetailsLine>
           </Styled.PostDetails>
         </Container>
       </Styled.BannerInfo>
       <Styled.BannerImg>
-        <ImageStrapi image={article.attributes.image} height="450" />
+        <ImageStrapi image={article.image} height="450" />
       </Styled.BannerImg>
     </Styled.Banner>
   )

@@ -9,21 +9,20 @@ const Banner = dynamic(() => import("components/Banner"))
 import { fetchAPI } from "lib/api"
 import { Container, Section } from "styles/shared"
 
-const Article = ({ article, categories, author }: any) => {
+const Article = ({ article, author }: any) => {
   const seo = {
-    metaTitle: article.attributes.title,
-    metaDescription: article.attributes.description,
-    shareImage: article?.attributes?.image,
+    metaTitle: article.title,
     article: true,
+    ...article.seo,
   }
 
   return (
-    <Layout seo={seo} categories={categories.data}>
+    <Layout seo={seo}>
       <Banner author={author} article={article} />
       <Section>
         <Container>
-          <Wysiwyg content={article.attributes.content} />
-          <Author data={author.data} />
+          <Wysiwyg content={article.content} />
+          <Author data={author} />
         </Container>
       </Section>
     </Layout>
@@ -49,6 +48,7 @@ export async function getStaticProps({ params }: any) {
       slug: params.slug,
     },
     populate: "*",
+    seo: { populate: "*" },
   })
 
   const authorRes = await fetchAPI(
@@ -59,13 +59,10 @@ export async function getStaticProps({ params }: any) {
     }
   )
 
-  const categoriesRes = await fetchAPI("/categories")
-
   return {
     props: {
-      article: articlesRes.data[0],
-      categories: categoriesRes,
-      author: authorRes,
+      article: articlesRes.data[0].attributes,
+      author: authorRes.data.attributes,
     },
     revalidate: 1,
   }
