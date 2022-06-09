@@ -6,9 +6,13 @@ const Articles = dynamic(() => import("components/Articles"))
 import { fetchAPI } from "lib/api"
 import { Container, Section, Title } from "styles/shared"
 
-const Home = ({ articles, categories, homepage }: any) => {
+const Home = ({ articles }: any) => {
+  const seo = {
+    metaTitle: "Home Page",
+  }
+
   return (
-    <Layout seo={homepage.attributes.seo} categories={categories}>
+    <Layout seo={seo}>
       <Section>
         <Container>
           <Title>Next.js + Strapi Blog</Title>
@@ -20,25 +24,10 @@ const Home = ({ articles, categories, homepage }: any) => {
 }
 
 export async function getStaticProps() {
-  // Run API calls in parallel
-  const [articlesRes, categoriesRes, homepageRes] = await Promise.all([
-    fetchAPI("/articles", { populate: "*" }),
-    fetchAPI("/categories", { populate: "*" }),
-    fetchAPI("/global", {
-      populate: {
-        favicon: "*",
-        defaultSeo: {
-          populate: "*",
-        },
-      },
-    }),
-  ])
-
+  const articlesRes = await fetchAPI("/articles", { populate: "*" })
   return {
     props: {
       articles: articlesRes.data,
-      categories: categoriesRes.data,
-      homepage: homepageRes.data,
     },
     revalidate: 1,
   }

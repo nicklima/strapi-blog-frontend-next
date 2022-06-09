@@ -1,29 +1,39 @@
 import Head from "next/head"
 import { useContext } from "react"
 
-import { IGlobalContext } from "interfaces"
-import { GlobalContext } from "pages/_app"
+import { IGlobalContext, ISEO } from "interfaces"
+import { GlobalContext } from "lib/global"
 import { getStrapiMedia } from "lib/media"
 
-const Seo = ({ seo }: any) => {
-  const { defaultSeo, siteName } = useContext<IGlobalContext>(GlobalContext)
-  const seoWithDefaults = {
-    ...defaultSeo,
-    ...seo,
+const Seo = ({ seo }: { seo: ISEO }) => {
+  // todo: fix the GLOBAL types
+  const globalData = useContext<IGlobalContext>(GlobalContext)
+  const siteData = globalData.global
+
+  let seoData = {
+    ...globalData?.global?.seo,
+  } as IGlobalContext as ISEO
+
+  if (seo) {
+    console.log(seo)
+    seoData = {
+      ...seoData,
+      ...seo,
+    }
   }
+
   const fullSeo = {
-    ...seoWithDefaults,
+    ...seoData,
     // Add title suffix
-    metaTitle: `${seoWithDefaults.metaTitle} | ${siteName}`,
+    metaTitle: `${seoData.metaTitle} | ${siteData?.siteName}`,
     // Get full image URL
-    shareImage: getStrapiMedia(seoWithDefaults.shareImage),
+    shareImage: getStrapiMedia(seoData.metaImage),
   }
 
   return (
     <Head>
-      {/* ToDo: Grab these values from Strapi */}
-      <meta content="#fff" name="theme-color" />
-      <meta content="#000" name="msapplication-TileColor" />
+      <meta content={siteData?.themeColor} name="theme-color" />
+      <meta content={siteData?.tileColor} name="msapplication-TileColor" />
       {fullSeo.metaTitle && (
         <>
           <title>{fullSeo.metaTitle}</title>

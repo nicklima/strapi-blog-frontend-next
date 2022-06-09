@@ -1,18 +1,15 @@
-import { createContext } from "react"
 import App from "next/app"
 import type { AppProps } from "next/app"
 
 import { fetchAPI } from "lib/api"
+import { GlobalContext } from "lib/global"
 import GlobalStyle from "styles/global"
 
-// Store Strapi Global object in context
-export const GlobalContext = createContext({})
-
 const MyApp = ({ Component, pageProps }: AppProps) => {
-  const { global } = pageProps
+  const { global, categories } = pageProps
 
   return (
-    <GlobalContext.Provider value={global.attributes}>
+    <GlobalContext.Provider value={{ global: global, categories }}>
       <GlobalStyle />
       <Component {...pageProps} />
     </GlobalContext.Provider>
@@ -26,17 +23,30 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
 MyApp.getInitialProps = async (ctx: any) => {
   // Calls page's `getInitialProps` and fills `appProps.pageProps`
   const appProps = await App.getInitialProps(ctx)
+
   // Fetch global site settings from Strapi
-  const globalRes = await fetchAPI("/global", {
-    populate: {
-      favicon: "*",
-      defaultSeo: {
-        populate: "*",
+  const [categoriesRes, globalRes] = await Promise.all([
+    fetchAPI("/categories", { populate: "*" }),
+    fetchAPI("/global", {
+      populate: {
+        themeColor: "*",
+        tileColor: "*",
+        favicon: "*",
+        seo: {
+          populate: "*",
+        },
       },
-    },
-  })
+    }),
+  ])
+
   // Pass the data to our page via props
-  return { ...appProps, pageProps: { global: globalRes.data } }
+  return {
+    ...appProps,
+    pageProps: {
+      global: globalRes.data.attributes,
+      categories: categoriesRes.data,
+    },
+  }
 }
 
 export default MyApp

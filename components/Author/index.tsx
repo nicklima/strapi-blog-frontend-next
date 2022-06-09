@@ -7,7 +7,7 @@ import { Email, Instagram, Facebook, Linkedin, Twitter } from "icons"
 import * as Styled from "./styled"
 
 const Author = ({ data }: any) => {
-  const { picture, name, email, about, social, slug } = data.attributes
+  const { picture, name, email, about, social, slug } = data
 
   const getLinks = (n: string) => {
     switch (n) {
