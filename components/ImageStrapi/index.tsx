@@ -1,53 +1,42 @@
-import Image from "next/image"
-import { buildUrl } from "cloudinary-build-url"
-import { IStrapiImage } from "interfaces"
+import NextImage from "next/image"
+import { IStrapiImage, IImageLoader } from "interfaces"
+import { getStrapiMedia } from "lib/media"
 
 const ImageStrapi = ({ image, layout, width, height }: IStrapiImage) => {
-  // Cloudinary cloud name
-  const cloudName = process.env.cloudname
-
-  // Image data
   const { alternativeText } = image.data.attributes
-  const imageId = image.data.attributes.provider_metadata.public_id
 
-  // Image sizes
+  const imgSrc = getStrapiMedia(image)
   const imgW = width ? width : image.data.attributes.width
   const imgH = height ? height : image.data.attributes.height
 
-  // Image urls
-  const url = buildUrl(imageId, { cloud: { cloudName } })
-  const blurImg = buildUrl(imageId, {
-    cloud: { cloudName },
-    transformations: {
-      effect: "blur:1000",
-      quality: 1,
-    },
-  })
+  const loader = ({ src, width, quality, format }: IImageLoader) => {
+    return `${src}?w=${width}&q=${quality || 75}&f=${format || "webp"}`
+  }
 
   if (layout === "fill") {
     return (
-      <Image
+      <NextImage
         alt={alternativeText || ""}
-        blurDataURL={blurImg}
+        blurDataURL={imgSrc}
         layout="fill"
-        loading="lazy"
+        loader={loader}
         objectFit="cover"
         placeholder="blur"
-        src={url}
+        src={imgSrc}
       />
     )
   }
 
   return (
-    <Image
+    <NextImage
       alt={alternativeText || ""}
-      blurDataURL={blurImg}
+      blurDataURL={imgSrc}
       height={imgH}
       layout={layout || "responsive"}
-      loading="lazy"
+      loader={loader}
       objectFit="cover"
       placeholder="blur"
-      src={url}
+      src={imgSrc}
       width={imgW}
     />
   )

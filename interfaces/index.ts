@@ -24,9 +24,7 @@ export interface ISEO {
 
 export interface IMedia {
   data: {
-    attributes: {
-      url: any
-    }
+    attributes: any
   }
 }
 
