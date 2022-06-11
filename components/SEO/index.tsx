@@ -15,7 +15,6 @@ const Seo = ({ seo }: { seo: ISEO }) => {
   } as IGlobalContext as ISEO
 
   if (seo) {
-    console.log(seo)
     seoData = {
       ...seoData,
       ...seo,
