@@ -4,7 +4,7 @@
 <img src="screenshot.png" />
 
 \
-This project is the **frontend** application (`next.js` hosted on Vercel) of a Headless blog using `Strapi` as CMS (hosted on Heroku) and with image management on `Cloudinary`.
+This project is the **frontend** application (`next.js` hosted on Vercel) of a Headless blog using `Strapi` as CMS (hosted on Heroku), including image management.
 
 This starter is based on [Next.js Blog Starter](https://github.com/strapi/strapi-starter-next-blog) and was create to be an option of starter with Styled Components + TypeScript.
 
