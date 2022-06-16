@@ -7,10 +7,11 @@ import GlobalStyle from "styles/global"
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   const { global, categories } = pageProps
+  const GlobalStyleProxy: any = GlobalStyle
 
   return (
     <GlobalContext.Provider value={{ global: global, categories }}>
-      <GlobalStyle />
+      <GlobalStyleProxy />
       <Component {...pageProps} />
     </GlobalContext.Provider>
   )
