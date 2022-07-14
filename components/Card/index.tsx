@@ -42,7 +42,7 @@ const Card = ({ article }: any) => {
       </Styled.Info>
       <Links to={`/authors/${post.author.data.attributes.slug}`}>
         <Styled.AuthorLine>
-          <AuthorIcon width="20" height="20" />
+          <AuthorIcon />
           <Styled.Author>{post.author.data.attributes.name}</Styled.Author>
         </Styled.AuthorLine>
       </Links>

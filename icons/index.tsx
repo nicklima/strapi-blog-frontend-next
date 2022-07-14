@@ -11,9 +11,9 @@ interface ISVG {
 const SVG = ({
   children,
   color = "#fff",
-  height = "20",
+  height = "15",
   viewBox,
-  width = "20",
+  width = "15",
 }: SVGProps<SVGSVGElement> & ISVG) => (
   <svg fill={color} width={width} height={height} viewBox={viewBox}>
     {children}
