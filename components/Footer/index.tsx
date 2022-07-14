@@ -1,54 +1,24 @@
 import Image from "next/image"
+
+import logos from "./data.json"
 import * as Styled from "./styled"
 
 const Footer = () => {
   return (
     <Styled.Footer>
       <Styled.Logos>
-        <Styled.Logo
-          href="https://vercel.com"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            src="/vercel.svg"
-            alt="Vercel Logo"
-            width="90"
-            height="35"
-            loading="lazy"
-            layout="fill"
-          />
-        </Styled.Logo>
-
-        <Styled.Logo
-          href="https://nextjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            src="/nextjs.svg"
-            alt="Next.js Logo"
-            width="90"
-            height="35"
-            loading="lazy"
-            layout="fill"
-          />
-        </Styled.Logo>
-
-        <Styled.Logo
-          href="https://strapi.io"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            src="/strapi.svg"
-            alt="Strapi Logo"
-            width="90"
-            height="35"
-            loading="lazy"
-            layout="fill"
-          />
-        </Styled.Logo>
+        {logos.map(({ link, alt, img }: ILogos, idx: number) => {
+          return (
+            <Styled.Logo
+              key={`logos-${idx}`}
+              href={link}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image src={img} alt={alt} loading="lazy" layout="fill" />
+            </Styled.Logo>
+          )
+        })}
       </Styled.Logos>
       <Styled.Credits>
         <a

@@ -1,0 +1,17 @@
+[
+  {
+    "link": "https://vercel.com",
+    "alt": "Vercel Logo",
+    "img": "/vercel.svg"
+  },
+  {
+    "link": "https://nextjs.org",
+    "alt": "Next.JS Logo",
+    "img": "/nextjs.svg"
+  },
+  {
+    "link": "https://strapi.io",
+    "alt": "Strapi Logo",
+    "img": "/strapi.svg"
+  }
+]
