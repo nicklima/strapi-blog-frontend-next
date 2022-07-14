@@ -24,7 +24,7 @@ const Banner = ({ author, article }: any) => {
               </Styled.Date>
             </Styled.PostDetailsLine>
             <Styled.PostDetailsLine>
-              <AuthorIcon width="15" height="15" />
+              <AuthorIcon />
               <Links to={`/authors/${author.slug}`}>
                 <Styled.Author>{author.name}</Styled.Author>
               </Links>
