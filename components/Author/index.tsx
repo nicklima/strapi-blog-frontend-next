@@ -9,22 +9,13 @@ import * as Styled from "./styled"
 const Author = ({ data }: any) => {
   const { picture, name, email, about, social, slug } = data
 
-  const getLinks = (n: string) => {
-    switch (n) {
-      case "linkedin":
-        return <Linkedin width="15" height="15" />
-      case "twitter":
-        return <Twitter width="15" height="15" />
-      case "facebook":
-        return <Facebook width="15" height="15" />
-      case "instagram":
-        return <Instagram width="15" height="15" />
-      case "email":
-        return <Email width="15" height="15" />
-      default:
-        return
-    }
-  }
+  const socialMedia = {
+    linkedin: <Linkedin />,
+    twitter: <Twitter />,
+    facebook: <Facebook />,
+    instagram: <Instagram />,
+    email: <Email />,
+  } as any
 
   return (
     <Styled.Author>
@@ -41,7 +32,7 @@ const Author = ({ data }: any) => {
         <Styled.Social>
           <Styled.Network>
             <Links to={`mailto: ${email}`} target="_blank">
-              {getLinks("email")}
+              {socialMedia["email"]}
             </Links>
           </Styled.Network>
           {social.map((item: any) => {
@@ -49,7 +40,7 @@ const Author = ({ data }: any) => {
             return (
               <Styled.Network key={`social_${id}`}>
                 <Links to={url} target="_blank">
-                  {getLinks(network)}
+                  {socialMedia[network]}
                 </Links>
               </Styled.Network>
             )

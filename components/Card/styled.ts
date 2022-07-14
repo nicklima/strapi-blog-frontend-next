@@ -59,6 +59,7 @@ export const Date = styled.time`
 `
 
 export const AuthorLine = styled(Grid)`
+  align-items: center;
   border-top: 1px solid ${theme.bg};
   color: ${theme.text};
   grid-gap: 10px;
