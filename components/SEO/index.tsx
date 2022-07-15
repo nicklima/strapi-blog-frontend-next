@@ -2,8 +2,7 @@ import Head from "next/head"
 import { useContext } from "react"
 
 import { IGlobalContext, ISEO } from "interfaces"
-import { GlobalContext } from "lib/global"
-import { getStrapiMedia } from "lib/media"
+import { getStrapiMedia, GlobalContext } from "lib"
 
 const Seo = ({ seo }: { seo: ISEO }) => {
   // todo: fix the GLOBAL types

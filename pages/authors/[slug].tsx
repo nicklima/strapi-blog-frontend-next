@@ -1,11 +1,10 @@
 import dynamic from "next/dynamic"
 
 import Layout from "components/Layout"
-
 const Author = dynamic(() => import("components/Author"))
 const Articles = dynamic(() => import("components/Articles"))
 
-import { fetchAPI } from "lib/api"
+import { fetchAPI, getPaths } from "lib"
 import { Container, Section } from "styles/shared"
 
 const AuthorPage = ({ author, articles }: any) => {
@@ -27,18 +26,7 @@ const AuthorPage = ({ author, articles }: any) => {
   )
 }
 
-export async function getStaticPaths() {
-  const authorRes = await fetchAPI("/writers", { fields: ["slug"] })
-
-  return {
-    paths: authorRes.data.map((author: { attributes: { slug: string } }) => ({
-      params: {
-        slug: author.attributes.slug,
-      },
-    })),
-    fallback: false,
-  }
-}
+export const getStaticPaths = () => getPaths("/writers")
 
 export async function getStaticProps({ params }: any) {
   const authorRes = await fetchAPI(`/writers`, {

@@ -4,7 +4,7 @@ import Layout from "components/Layout"
 const Articles = dynamic(() => import("components/Articles"))
 const Pagination = dynamic(() => import("components/Pagination"))
 
-import { fetchAPI } from "lib/api"
+import { fetchAPI } from "lib"
 import { Container, Section, Title } from "styles/shared"
 
 const Home = ({ articles, pages }: any) => {
