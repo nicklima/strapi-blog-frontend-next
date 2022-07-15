@@ -1,6 +1,6 @@
 import { useContext } from "react"
 
-import { GlobalContext } from "lib/global"
+import { GlobalContext } from "lib"
 import { ICategories, IGlobalContext } from "interfaces"
 
 import { Container, HiddenText } from "styles/shared"

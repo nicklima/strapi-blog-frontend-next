@@ -3,7 +3,7 @@ import dynamic from "next/dynamic"
 import Layout from "components/Layout"
 const Articles = dynamic(() => import("components/Articles"))
 
-import { fetchAPI } from "lib/api"
+import { fetchAPI, getPaths } from "lib"
 import { Container, Section, Title } from "styles/shared"
 
 const Category = ({ category }: { category: any }) => {
@@ -25,20 +25,7 @@ const Category = ({ category }: { category: any }) => {
   )
 }
 
-export async function getStaticPaths() {
-  const categoriesRes = await fetchAPI("/categories", { fields: ["slug"] })
-
-  return {
-    paths: categoriesRes.data.map(
-      (category: { attributes: { slug: any } }) => ({
-        params: {
-          slug: category.attributes.slug,
-        },
-      })
-    ),
-    fallback: false,
-  }
-}
+export const getStaticPaths = () => getPaths("/categories")
 
 export async function getStaticProps({ params }: any) {
   const matchingCategories = await fetchAPI("/categories", {

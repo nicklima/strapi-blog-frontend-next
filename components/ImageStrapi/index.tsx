@@ -1,6 +1,6 @@
 import NextImage from "next/image"
 import { IStrapiImage, IImageLoader } from "interfaces"
-import { getStrapiMedia } from "lib/media"
+import { getStrapiMedia } from "lib"
 
 const ImageStrapi = ({ image, layout, width, height }: IStrapiImage) => {
   const { alternativeText } = image.data.attributes

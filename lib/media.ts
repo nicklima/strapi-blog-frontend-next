@@ -1,4 +1,4 @@
-import { getStrapiURL } from "lib/api"
+import { getStrapiURL } from "lib"
 import { IMedia } from "interfaces"
 
 export const getStrapiMedia = (media: IMedia) => {

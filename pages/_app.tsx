@@ -1,8 +1,7 @@
 import App from "next/app"
 import type { AppProps } from "next/app"
 
-import { fetchAPI } from "lib/api"
-import { GlobalContext } from "lib/global"
+import { fetchAPI, GlobalContext } from "lib"
 import GlobalStyle from "styles/global"
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
