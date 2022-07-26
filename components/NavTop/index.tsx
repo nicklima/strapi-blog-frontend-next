@@ -13,7 +13,7 @@ const Nav = () => {
     <Styled.Header>
       <Container>
         <Styled.Nav>
-          <Styled.NavLink to="/">
+          <Styled.NavLink to="/" alt="Go to homepage">
             <HiddenText>Go to homepage</HiddenText>
             <BlogLogo />
           </Styled.NavLink>
@@ -21,7 +21,10 @@ const Nav = () => {
             {categories?.map((category: ICategories) => {
               return (
                 <Styled.ListItem key={category.id}>
-                  <Styled.NavLink to={`/category/${category.attributes.slug}`}>
+                  <Styled.NavLink
+                    to={`/category/${category.attributes.slug}`}
+                    alt={`See all posts in ${category.attributes.name}`}
+                  >
                     {category.attributes.name}
                   </Styled.NavLink>
                 </Styled.ListItem>

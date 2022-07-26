@@ -1,4 +1,3 @@
-import { ReactNode } from "react"
 export interface IGlobalContext {
   global?: {
     seo: ISEO
@@ -48,12 +47,6 @@ export interface IImageLoader {
   width?: number
   quality?: number
   format?: number
-}
-
-export interface ILinks {
-  children?: ReactNode
-  to: string
-  target?: string
 }
 
 export interface ITheme {
