@@ -1,9 +1,7 @@
 import App, { AppProps } from "next/app"
 import { ThemeProvider } from "styled-components"
 
-import GlobalStyle from "styles/global"
-import { theme } from "styles/theme"
-
+import { GlobalStyle, theme } from "styles"
 import { fetchAPI, GlobalContext } from "lib"
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
@@ -11,8 +9,8 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
 
   return (
     <ThemeProvider theme={theme}>
+      <GlobalStyle />
       <GlobalContext.Provider value={{ global: global, categories }}>
-        <GlobalStyle />
         <Component {...pageProps} />
       </GlobalContext.Provider>
     </ThemeProvider>
