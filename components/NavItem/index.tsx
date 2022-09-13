@@ -1,4 +1,4 @@
-import Links from "components/Links"
+import { Links } from "components"
 import { ICategoriesAttr } from "interfaces/index"
 import * as Styled from "./styled"
 

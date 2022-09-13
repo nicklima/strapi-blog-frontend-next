@@ -1,10 +1,10 @@
 import Moment from "react-moment"
 import dynamic from "next/dynamic"
 
+import { Container } from "components"
 const ImageStrapi = dynamic(() => import("components/ImageStrapi"))
 const Links = dynamic(() => import("components/Links"))
 
-import { Container } from "styles/shared"
 import { AuthorIcon, CalendarIcon } from "icons"
 
 import * as Styled from "./styled"

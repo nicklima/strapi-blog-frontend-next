@@ -1,6 +1,5 @@
-import Links from "components/Links"
+import { HiddenText, Links } from "components"
 import { BlogLogo } from "icons"
-import { HiddenText } from "styles/shared"
 
 const NavLogo = () => (
   <Links to="/" alt="Go to homepage">

@@ -1,11 +1,10 @@
 import dynamic from "next/dynamic"
 
-import Layout from "components/Layout"
+import { Section, Title, Layout } from "components"
 const Articles = dynamic(() => import("components/Articles"))
 const Pagination = dynamic(() => import("components/Pagination"))
 
 import { fetchAPI } from "lib"
-import { Container, Section, Title } from "styles/shared"
 
 const Home = ({ articles, pages }: any) => {
   const hasPages = pages.limit < pages.total
@@ -16,11 +15,9 @@ const Home = ({ articles, pages }: any) => {
   return (
     <Layout seo={seo}>
       <Section>
-        <Container>
-          <Title>Next.js + Strapi Blog</Title>
-          <Articles articles={articles} />
-          {hasPages && <Pagination pagination={pages} />}
-        </Container>
+        <Title>Next.js + Strapi Blog</Title>
+        <Articles articles={articles} />
+        {hasPages && <Pagination pagination={pages} />}
       </Section>
     </Layout>
   )

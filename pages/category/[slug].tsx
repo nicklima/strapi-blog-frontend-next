@@ -1,10 +1,9 @@
 import dynamic from "next/dynamic"
 
-import Layout from "components/Layout"
+import { Layout, Section, Title } from "components"
 const Articles = dynamic(() => import("components/Articles"))
 
 import { fetchAPI, getPaths } from "lib"
-import { Container, Section, Title } from "styles/shared"
 
 const Category = ({ category }: { category: any }) => {
   const { seo, name, articles } = category
@@ -16,10 +15,8 @@ const Category = ({ category }: { category: any }) => {
   return (
     <Layout seo={seoObj}>
       <Section>
-        <Container>
-          <Title>{name}</Title>
-          <Articles articles={articles?.data} />
-        </Container>
+        <Title>{name}</Title>
+        <Articles articles={articles?.data} />
       </Section>
     </Layout>
   )

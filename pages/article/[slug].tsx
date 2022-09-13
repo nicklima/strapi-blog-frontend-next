@@ -1,12 +1,11 @@
 import dynamic from "next/dynamic"
 
-import Layout from "components/Layout"
+import { Layout, Section } from "components"
 const Author = dynamic(() => import("components/Author"))
 const Wysiwyg = dynamic(() => import("components/Wysiwyg"))
 const Banner = dynamic(() => import("components/Banner"))
 
 import { fetchAPI, getPaths } from "lib"
-import { Container, Section } from "styles/shared"
 
 const Article = ({ article, author }: any) => {
   const seo = {
@@ -19,10 +18,8 @@ const Article = ({ article, author }: any) => {
     <Layout seo={seo}>
       <Banner author={author} article={article} />
       <Section>
-        <Container>
-          <Wysiwyg content={article.content} />
-          <Author data={author} />
-        </Container>
+        <Wysiwyg content={article.content} />
+        <Author data={author} />
       </Section>
     </Layout>
   )
