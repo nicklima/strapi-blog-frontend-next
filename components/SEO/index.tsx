@@ -1,7 +1,7 @@
 import Head from "next/head"
 import { useContext } from "react"
+import { IGlobalContext, ISEO } from "global-interfaces"
 
-import { IGlobalContext, ISEO } from "interfaces"
 import { getStrapiMedia, GlobalContext } from "lib"
 import { createMeta, createMetaTitle } from "utils"
 
