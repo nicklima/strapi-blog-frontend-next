@@ -1,8 +1,7 @@
 import styled from "styled-components"
-import { theme } from "styles/theme"
 
 export const Title = styled.h2`
-  color: ${theme.text};
+  color: ${({ theme }) => theme.text};
   font-family: Staatliches;
   font-size: 50px;
   margin-bottom: 40px;

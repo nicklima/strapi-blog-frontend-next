@@ -1,9 +1,8 @@
 import styled from "styled-components"
-import { theme } from "styles/theme"
 
 export const Card = styled.div`
   align-items: flex-start;
-  background: ${theme.colors.primary};
+  background: ${({ theme }) => theme.colors.primary};
   border-radius: 5px;
   display: grid;
   grid-template-rows: 250px auto auto;
@@ -24,7 +23,7 @@ export const Figure = styled.figure`
   }
 `
 export const Info = styled.div`
-  color: ${theme.text};
+  color: ${({ theme }) => theme.text};
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -49,26 +48,26 @@ export const Grid = styled.div`
 `
 
 export const Category = styled.div`
-  color: ${theme.colors.secondary};
+  color: ${({ theme }) => theme.colors.secondary};
   font-family: var(--font-heading);
 `
 
 export const Date = styled.time`
-  color: ${theme.colors.tertiary};
+  color: ${({ theme }) => theme.colors.tertiary};
   font-family: var(--font-heading);
 `
 
 export const AuthorLine = styled(Grid)`
   align-items: center;
-  border-top: 1px solid ${theme.bg};
-  color: ${theme.text};
+  border-top: 1px solid ${({ theme }) => theme.bg};
+  color: ${({ theme }) => theme.text};
   grid-gap: 10px;
   justify-content: flex-start;
   padding: 15px;
   position: relative;
 
   &:before {
-    background: ${theme.text};
+    background: ${({ theme }) => theme.text};
     content: "";
     height: 1px;
     left: 0;
