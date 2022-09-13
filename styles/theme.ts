@@ -1,6 +1,4 @@
-import { ITheme } from "interfaces"
-
-export const theme: ITheme = {
+export const theme = {
   white: "#fff",
   bg: "#1e1d32",
   text: "#fff",
