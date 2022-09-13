@@ -1,11 +1,4 @@
 import styled from "styled-components"
-import Links from "components/Links"
-
-export const Header = styled.header`
-  background: #181728;
-`
-
-export const NavLink = styled(Links)``
 
 export const Nav = styled.nav`
   align-items: center;
@@ -29,10 +22,4 @@ export const List = styled.ul`
     justify-content: space-between;
     width: 400px;
   }
-`
-
-export const ListItem = styled.li`
-  color: #fff;
-  font-family: Staatliches;
-  font-size: 20px;
 `
