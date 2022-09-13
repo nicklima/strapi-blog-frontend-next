@@ -1,18 +1,17 @@
-import { ReactNode } from "react"
 import dynamic from "next/dynamic"
 
-const Nav = dynamic(() => import("components/NavTop"))
+const Header = dynamic(() => import("components/Header"))
 const Seo = dynamic(() => import("components/SEO"))
 const Footer = dynamic(() => import("components/Footer"))
 
-import { ISEO } from "interfaces"
-import { Main } from "styles/shared"
+import * as Styled from "./styled"
+import { ILayout } from "./interface"
 
-const Layout = ({ children, seo }: { children: ReactNode; seo: ISEO }) => (
+const Layout = ({ children, seo }: ILayout) => (
   <>
     <Seo seo={seo} />
-    <Nav />
-    <Main>{children}</Main>
+    <Header />
+    <Styled.Main>{children}</Styled.Main>
     <Footer />
   </>
 )

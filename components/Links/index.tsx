@@ -1,10 +1,14 @@
 import Link from "next/link"
-import { ILinks } from "interfaces"
+import { ILinks } from "./interface"
 
-const Links = ({ children, to, target }: ILinks) => (
-  <Link href={to}>
-    <a target={target || "_self"}>{children}</a>
-  </Link>
-)
+const Links = ({ to, target = "_self", children, alt }: ILinks) => {
+  return (
+    <Link href={to}>
+      <a target={target} alt={alt} aria-label={alt}>
+        {children}
+      </a>
+    </Link>
+  )
+}
 
 export default Links

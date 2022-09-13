@@ -24,14 +24,20 @@ const Author = ({ data }: any) => {
       </Styled.Picture>
       <Styled.Info>
         <Styled.Title>
-          <Links to={`/authors/${slug}`}>{name}</Links>
+          <Links to={`/authors/${slug}`} alt={`See all ${name} posts`}>
+            {name}
+          </Links>
         </Styled.Title>
         <Styled.About>{about}</Styled.About>
       </Styled.Info>
       {social && (
         <Styled.Social>
           <Styled.Network>
-            <Links to={`mailto: ${email}`} target="_blank">
+            <Links
+              to={`mailto: ${email}`}
+              target="_blank"
+              alt={`${name} e-mail address`}
+            >
               {socialMedia["email"]}
             </Links>
           </Styled.Network>
@@ -39,7 +45,11 @@ const Author = ({ data }: any) => {
             const { id, network, url } = item
             return (
               <Styled.Network key={`social_${id}`}>
-                <Links to={url} target="_blank">
+                <Links
+                  to={url}
+                  target="_blank"
+                  alt={`Visit ${name} ${network} profile`}
+                >
                   {socialMedia[network]}
                 </Links>
               </Styled.Network>

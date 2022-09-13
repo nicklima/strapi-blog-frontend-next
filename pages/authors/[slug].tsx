@@ -1,11 +1,10 @@
 import dynamic from "next/dynamic"
 
-import Layout from "components/Layout"
+import { Layout, Section } from "components"
 const Author = dynamic(() => import("components/Author"))
 const Articles = dynamic(() => import("components/Articles"))
 
 import { fetchAPI, getPaths } from "lib"
-import { Container, Section } from "styles/shared"
 
 const AuthorPage = ({ author, articles }: any) => {
   const seo = {
@@ -17,10 +16,8 @@ const AuthorPage = ({ author, articles }: any) => {
   return (
     <Layout seo={seo}>
       <Section>
-        <Container>
-          <Author data={author} />
-          <Articles articles={articles.data} />
-        </Container>
+        <Author data={author} />
+        <Articles articles={articles.data} />
       </Section>
     </Layout>
   )
