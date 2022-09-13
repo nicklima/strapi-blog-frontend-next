@@ -27,12 +27,14 @@ export interface IMedia {
   }
 }
 
+export interface ICategoriesAttr {
+  slug: string
+  name: string
+}
+
 export interface ICategories {
   id: number
-  attributes: {
-    slug: string
-    name: string
-  }
+  attributes: ICategoriesAttr
 }
 
 export interface IStrapiImage {
