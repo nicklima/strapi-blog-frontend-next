@@ -1,5 +1,6 @@
 declare module "global-interfaces" {
   import { ReactNode } from "react"
+  import { IStrapiImage } from "strapi-data"
 
   export interface ISEO {
     id?: number
@@ -10,7 +11,7 @@ declare module "global-interfaces" {
     structuredData?: string | null
     metaViewport?: string | null
     canonicalURL?: string | null
-    metaImage?: IImageData
+    metaImage?: IStrapiImage
     metaSocial?: []
     article?: boolean
   }

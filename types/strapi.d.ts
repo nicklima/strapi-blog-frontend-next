@@ -1,5 +1,5 @@
 declare module "strapi-data" {
-  export interface StrapiImage {
+  export interface IStrapiImage {
     data: {
       attributes: {
         alternativeText: string

@@ -1,7 +1,7 @@
 import "styled-components"
 
 declare module "styled-components" {
-  interface ThemeColors {
+  interface IThemeColors {
     primary: string
     secondary: string
     tertiary: string
@@ -11,6 +11,6 @@ declare module "styled-components" {
     white: string
     bg: string
     text: string
-    colors: ThemeColors
+    colors: IThemeColors
   }
 }

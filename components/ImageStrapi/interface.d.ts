@@ -1,7 +1,7 @@
-import { StrapiImage } from "strapi-data"
+import { IStrapiImage } from "strapi-data"
 
 interface IImage {
-  image: StrapiImage
+  image: IStrapiImage
   layout?: "responsive" | "fill" | "fixed" | "intrinsic" | undefined
   width?: string
   height?: string
