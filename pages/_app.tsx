@@ -11,7 +11,7 @@ const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <GlobalContext.Provider value={{ global, categories }}>
+      <GlobalContext.Provider value={{ global: global, categories }}>
         <Component {...pageProps} />
       </GlobalContext.Provider>
     </ThemeProvider>
@@ -41,15 +41,11 @@ MyApp.getInitialProps = async (ctx: any) => {
     }),
   ])
 
-  const globalProps = {
-    global: globalRes.data.attributes,
-  }
-
   // Pass the data to our page via props
   return {
     ...appProps,
     pageProps: {
-      global: globalProps,
+      global: globalRes.data.attributes,
       categories: categoriesRes.data,
     },
   }
