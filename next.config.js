@@ -1,4 +1,5 @@
-const isDev = process.env.NODE_ENV === "development"
+/** @type {import('next').NextConfig} */
+
 const withPlugins = require("next-compose-plugins")
 const withPWA = require("next-pwa")
 const runtimeCaching = require("next-pwa/cache")
@@ -6,7 +7,9 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
   enabled: process.env.ANALYZE === "true",
 })
 
-module.exports = withPlugins([
+const isDev = process.env.NODE_ENV === "development"
+
+const nextConfig = withPlugins([
   [withBundleAnalyzer],
   [withPWA],
   {
@@ -29,3 +32,5 @@ module.exports = withPlugins([
     },
   },
 ])
+
+module.exports = nextConfig

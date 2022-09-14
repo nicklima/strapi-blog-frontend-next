@@ -1,5 +1,4 @@
 import styled from "styled-components"
-import { theme } from "styles/theme"
 
 export const Banner = styled.div`
   height: 450px;
@@ -37,7 +36,7 @@ export const BannerImg = styled.div`
 
 export const BannerInfo = styled.div`
   bottom: 25px;
-  color: ${theme.text};
+  color: ${({ theme }) => theme.text};
   position: absolute;
   width: 100%;
   z-index: 3;
@@ -61,7 +60,7 @@ export const PostDetails = styled.div`
 export const Date = styled.time``
 
 export const PostDetailsLine = styled.div`
-  color: ${theme.text};
+  color: ${({ theme }) => theme.text};
   display: flex;
   grid-gap: 10px;
   justify-content: flex-start;

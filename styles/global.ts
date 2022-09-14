@@ -1,5 +1,4 @@
 import { createGlobalStyle } from "styled-components"
-import { theme } from "styles/theme"
 
 export default createGlobalStyle`
   @font-face {
@@ -43,7 +42,7 @@ export default createGlobalStyle`
   }
 
   body {
-    background: ${theme.bg};
+    background: ${({ theme }) => theme.bg};
     font-family: var(--font-default);
     font-size: 16px;
     overflow-x: hidden;

@@ -1,18 +1,20 @@
-import App from "next/app"
-import type { AppProps } from "next/app"
+import App, { AppProps } from "next/app"
+import { ThemeProvider } from "styled-components"
+import { IGlobalContext } from "global-interfaces"
 
+import { GlobalStyle, theme } from "styles"
 import { fetchAPI, GlobalContext } from "lib"
-import GlobalStyle from "styles/global"
 
-const MyApp = ({ Component, pageProps }: AppProps) => {
-  const { global, categories } = pageProps
-  const GlobalStyleProxy: any = GlobalStyle
+const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
+  const { global, categories } = pageProps as IGlobalContext
 
   return (
-    <GlobalContext.Provider value={{ global: global, categories }}>
-      <GlobalStyleProxy />
-      <Component {...pageProps} />
-    </GlobalContext.Provider>
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      <GlobalContext.Provider value={{ global: global, categories }}>
+        <Component {...pageProps} />
+      </GlobalContext.Provider>
+    </ThemeProvider>
   )
 }
 

@@ -1,5 +1,6 @@
 import { Links } from "components"
-import { ICategoriesAttr } from "interfaces/index"
+import { ICategoriesAttr } from "global-interfaces"
+
 import * as Styled from "./styled"
 
 const NavItem = ({ data }: { data: ICategoriesAttr }) => {

@@ -1,16 +1,15 @@
 import styled from "styled-components"
-import { theme } from "styles/theme"
 
 export const Author = styled.div`
-  background: ${theme.colors.primary};
+  background: ${({ theme }) => theme.colors.primary};
   border-radius: 5px;
-  color: ${theme.text};
+  color: ${({ theme }) => theme.text};
   margin: 60px 0 20px;
   padding: 30px;
 `
 
 export const Picture = styled.figure`
-  border: 2px solid ${theme.text};
+  border: 2px solid ${({ theme }) => theme.text};
   border-radius: 50%;
   height: 100px;
   margin: 0 auto;
@@ -39,7 +38,7 @@ export const Social = styled.ul`
 
 export const Network = styled.li`
   align-items: center;
-  background: ${theme.bg};
+  background: ${({ theme }) => theme.bg};
   border-radius: 50%;
   display: flex;
   height: 40px;

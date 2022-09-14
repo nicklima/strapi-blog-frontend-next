@@ -1,0 +1,3 @@
+interface IActiveProps {
+  active: boolean
+}

@@ -1,7 +1,7 @@
 import { getStrapiURL } from "lib"
-import { IMedia } from "interfaces"
+import { IStrapiImage } from "strapi-data"
 
-export const getStrapiMedia = (media: IMedia) => {
+export const getStrapiMedia = (media: IStrapiImage) => {
   const { url } = media.data.attributes
   const imageUrl = url.startsWith("/") ? getStrapiURL(url) : url
   return imageUrl

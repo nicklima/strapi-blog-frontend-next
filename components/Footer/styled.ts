@@ -1,9 +1,8 @@
 import styled from "styled-components"
-import { theme } from "styles/theme"
 
 export const Footer = styled.footer`
   align-items: center;
-  background: ${theme.white};
+  background: ${({ theme }) => theme.white};
   display: flex;
   flex-direction: column;
   height: 120px;
@@ -12,7 +11,7 @@ export const Footer = styled.footer`
 `
 
 export const Credits = styled.div`
-  background: ${theme.bg};
+  background: ${({ theme }) => theme.bg};
   font-size: 14px;
   font-weight: 600;
   padding: 10px;
@@ -20,12 +19,12 @@ export const Credits = styled.div`
   width: 100%;
 
   a {
-    color: ${theme.white};
+    color: ${({ theme }) => theme.white};
     line-height: 1.5;
 
     &:visited,
     &:hover {
-      color: ${theme.white};
+      color: ${({ theme }) => theme.white};
     }
   }
 `

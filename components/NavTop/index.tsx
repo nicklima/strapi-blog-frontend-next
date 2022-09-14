@@ -1,10 +1,10 @@
 import { useContext } from "react"
+import { ICategories, IGlobalContext } from "global-interfaces"
 
 import { GlobalContext } from "lib"
 import { NavItem, NavLogo } from "components"
 
 import * as Styled from "./styled"
-import { ICategories, IGlobalContext } from "interfaces"
 
 const Nav = () => {
   const { categories } = useContext(GlobalContext) as IGlobalContext

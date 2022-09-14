@@ -1,11 +1,11 @@
 import Head from "next/head"
 import { useContext } from "react"
+import { IGlobalContext, ISEO, ISEOLayout } from "global-interfaces"
 
-import { IGlobalContext, ISEO } from "interfaces"
 import { getStrapiMedia, GlobalContext } from "lib"
 import { createMeta, createMetaTitle } from "utils"
 
-const Seo = ({ seo }: { seo: ISEO }) => {
+const Seo = ({ seo }: { seo: ISEO | ISEOLayout }) => {
   // todo: fix the GLOBAL types
   const globalData = useContext<IGlobalContext>(GlobalContext)
   const siteData = globalData.global
