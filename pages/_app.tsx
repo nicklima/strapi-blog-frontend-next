@@ -1,16 +1,17 @@
 import App, { AppProps } from "next/app"
 import { ThemeProvider } from "styled-components"
+import { IGlobalContext } from "global-interfaces"
 
 import { GlobalStyle, theme } from "styles"
 import { fetchAPI, GlobalContext } from "lib"
 
-const MyApp = ({ Component, pageProps }: AppProps) => {
-  const { global, categories } = pageProps
+const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
+  const { global, categories } = pageProps as IGlobalContext
 
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <GlobalContext.Provider value={{ global: global, categories }}>
+      <GlobalContext.Provider value={{ global, categories }}>
         <Component {...pageProps} />
       </GlobalContext.Provider>
     </ThemeProvider>
@@ -40,11 +41,15 @@ MyApp.getInitialProps = async (ctx: any) => {
     }),
   ])
 
+  const globalProps = {
+    global: globalRes.data.attributes,
+  }
+
   // Pass the data to our page via props
   return {
     ...appProps,
     pageProps: {
-      global: globalRes.data.attributes,
+      global: globalProps,
       categories: categoriesRes.data,
     },
   }
