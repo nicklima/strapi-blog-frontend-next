@@ -1,10 +1,13 @@
-const isDev = process.env.NODE_ENV === "development"
+/** @type {import('next').NextConfig} */
+
 const withPlugins = require("next-compose-plugins")
 const withPWA = require("next-pwa")
 const runtimeCaching = require("next-pwa/cache")
 const withBundleAnalyzer = require("@next/bundle-analyzer")({
   enabled: process.env.ANALYZE === "true",
 })
+
+const isDev = process.env.NODE_ENV === "development"
 
 module.exports = withPlugins([
   [withBundleAnalyzer],
