@@ -2,7 +2,7 @@ declare module "global-interfaces" {
   import { ReactNode } from "react"
   import { IStrapiImage } from "strapi-data"
 
-  export interface ISEO {
+  interface ISEOOptions {
     id?: number
     metaTitle?: string
     metaDescription?: string
@@ -11,14 +11,19 @@ declare module "global-interfaces" {
     structuredData?: string | null
     metaViewport?: string | null
     canonicalURL?: string | null
-    metaImage?: IStrapiImage
     metaSocial?: []
     article?: boolean
+  }
+  export interface ISEO extends ISEOOptions {
+    metaImage: IStrapiImage
+  }
+  export interface ISEOLayout extends ISEOOptions {
+    metaImage?: IStrapiImage
   }
 
   export interface IGlobalContext {
     global?: {
-      seo: ISEO
+      seo: ISEOGlobal
       siteName: string
       tileColor: string
       themeColor: string
@@ -28,7 +33,7 @@ declare module "global-interfaces" {
 
   export interface ILayout {
     children: ReactNode
-    seo: ISEO
+    seo: ISEOLayout
   }
 
   export interface ICategoriesAttr {
