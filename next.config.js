@@ -9,7 +9,7 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
 
 const isDev = process.env.NODE_ENV === "development"
 
-module.exports = withPlugins([
+const nextConfig = withPlugins([
   [withBundleAnalyzer],
   [withPWA],
   {
@@ -32,3 +32,5 @@ module.exports = withPlugins([
     },
   },
 ])
+
+module.exports = nextConfig
