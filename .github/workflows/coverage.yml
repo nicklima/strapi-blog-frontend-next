@@ -1,20 +1,11 @@
-name: build
+name: CI - Code Climate Coverage
+
 on:
   push:
-    branches:
-      - main
-    tags:
-      - '!*' # Do not execute on tags
-    paths:
-      - src/*
-      - test/*
-      - '*.json'
-      - yarn.lock
+    branches: ["main"]
   pull_request:
-    branches:
-      - main
-    paths:
-      - '!*.MD'
+    branches: ["main"]
+    
 jobs:
   test:
     strategy:
@@ -24,8 +15,8 @@ jobs:
     name: test/node ${{ matrix.node }}/${{ matrix.platform }}
     runs-on: ${{ matrix.platform }}
     steps:
-    - uses: actions/checkout@master
-    - uses: actions/setup-node@master
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node }}
     - run: npm install -g yarn
@@ -37,8 +28,8 @@ jobs:
     name: coverage
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
-    - uses: actions/setup-node@master
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
       with:
         node-version: '12'
     - run: npm install -g yarn
