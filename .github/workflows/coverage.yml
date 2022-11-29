@@ -2,7 +2,7 @@ name: build
 on:
   push:
     branches:
-      - master
+      - main
     tags:
       - '!*' # Do not execute on tags
     paths:
@@ -12,7 +12,7 @@ on:
       - yarn.lock
   pull_request:
     branches:
-      - master
+      - main
     paths:
       - '!*.MD'
 jobs:
