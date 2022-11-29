@@ -1,5 +1,7 @@
 # Next.js Blog with Strapi Headless CMS
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/cb40dea7de21f2e02eda/maintainability)](https://codeclimate.com/github/nicklima/strapi-blog-frontend-next/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/cb40dea7de21f2e02eda/test_coverage)](https://codeclimate.com/github/nicklima/strapi-blog-frontend-next/test_coverage)
+
 \
 <img src="screenshot.png" />
 
