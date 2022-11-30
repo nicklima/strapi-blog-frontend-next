@@ -1,5 +1,3 @@
-<!-- Describe the type of PR changes -->
-
 ## Type of change
 
 - [ ] Bug fix
@@ -8,5 +6,3 @@
 - [ ] Refactoring
 
 ## Description
-
-<!-- Describe what are the changes -->
