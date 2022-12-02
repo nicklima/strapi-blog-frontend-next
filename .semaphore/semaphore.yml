@@ -25,3 +25,6 @@ blocks:
         on_pass:
           commands:
             - ./cc-test-reporter after-build --exit-code 0
+        on_fail:
+          commands:
+            - ./cc-test-reporter after-build --exit-code 1
