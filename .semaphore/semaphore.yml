@@ -8,7 +8,7 @@ blocks:
   - name: Coverage
     task:
       jobs:
-        - name: 'Job #1'
+        - name: Run Test Coverage
           commands:
             - 'curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter'
             - chmod +x ./cc-test-reporter
