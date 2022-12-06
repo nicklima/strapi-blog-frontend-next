@@ -1,6 +1,6 @@
-declare module "global-interfaces" {
-  import { ReactNode } from "react"
-  import { IStrapiImage } from "strapi-data"
+declare module 'global-interfaces' {
+  import { ReactNode } from 'react'
+  import { IStrapiImage } from 'strapi-data'
 
   interface ISEOOptions {
     id?: number
@@ -21,14 +21,21 @@ declare module "global-interfaces" {
     metaImage?: IStrapiImage
   }
 
-  export interface IGlobalContext {
-    global?: {
+  export interface IGlobalObj {
+    global: {
       seo: ISEOGlobal
       siteName: string
       tileColor: string
       themeColor: string
     }
-    categories?: [ICategories]
+  }
+
+  export interface IGlobalContext extends IGlobalObj {
+    categories: [ICategories]
+  }
+
+  export interface IAppData {
+    appData: IGlobalContext
   }
 
   export interface ILayout {

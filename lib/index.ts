@@ -1,4 +1,3 @@
-export { getStrapiURL, fetchAPI } from "./api"
-export { getPaths } from "./getPaths"
-export { GlobalContext } from "./global"
-export { getStrapiMedia } from "./media"
+export { getPaths } from 'lib/getPaths'
+export { getStrapiMedia } from 'lib/media'
+export { getStrapiURL, fetchAPI } from 'lib/api'
