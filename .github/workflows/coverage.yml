@@ -1,5 +1,6 @@
-name: coverage code climate
+name: CodeClimate - Coverage
 on:
+  workflow_dispatch: 
   push:
     branches:
       - master
