@@ -33,10 +33,21 @@ jobs:
       - run: yarn install
       - run: yarn test:unit
   coverage:
+    strategy:
+      matrix:
+        platform: [ubuntu-latest]
+        node: ["16.x"]
     name: Test & Publish code coverage to CodeClimate
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.platform }}
     needs: [test]
     steps:
+      - uses: actions/checkout@master
+      - uses: actions/setup-node@master
+        with:
+          node-version: ${{ matrix.node }}
+      - run: npm install -g yarn
+      - run: yarn install
+      - run: yarn test:unit
       - uses: paambaati/codeclimate-action@v3.2.0
         env:
           CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
