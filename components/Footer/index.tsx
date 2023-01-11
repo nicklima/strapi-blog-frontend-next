@@ -4,7 +4,7 @@ import logos from "./data.json"
 import * as Styled from "./styled"
 
 const Footer = () => (
-  <Styled.Footer>
+  <Styled.Footer data-testid="footer">
     <Styled.Logos>
       {logos.map(({ link, alt, img }: ILogos, idx: number) => {
         return (
