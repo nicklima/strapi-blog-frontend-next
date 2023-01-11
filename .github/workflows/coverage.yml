@@ -29,7 +29,6 @@ jobs:
         node-version: ${{ matrix.node }}
     - run: npm install -g yarn
     - run: yarn install
-    - run: yarn build
     - run: yarn test
   coverage:        
     strategy:
@@ -46,7 +45,6 @@ jobs:
         node-version: ${{ matrix.node }}
     - run: npm install -g yarn
     - run: yarn install
-    - run: yarn build
     - uses: paambaati/codeclimate-action@v2.2.4
       env:
         CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
