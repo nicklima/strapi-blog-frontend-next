@@ -1,4 +1,4 @@
-name: CodeClimate - Coverage
+name: CodeClimate - JEST Coverage
 on:
   push:
     branches:
@@ -13,15 +13,16 @@ on:
   workflow_dispatch:
 jobs:
   coverage:
-    name: Test & Publish code coverage to CodeClimate
+    name: Run tests & publish coverage to CodeClimate
     runs-on: ubuntu-latest
     steps:
-      - uses: paambaati/codeclimate-action@v3.2.0        
+      - uses: actions/checkout@master
+      - uses: actions/setup-node@master
         with:
-          coverageCommand: npm run jest
-          debug: true
-          verifyDownload: true
-          coverageLocations: |
-            ${{github.workspace}}/*.lcov:lcov
+          node-version: 16.x
+      - run: npm install -g yarn
+      - run: yarn install
+      - run: yarn test:unit
+      - uses: paambaati/codeclimate-action@v3.2.0
         env:
           CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
