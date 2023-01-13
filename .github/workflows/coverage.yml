@@ -12,6 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Running corabank/front-coverage-action    
     steps:
+      - uses: actions/checkout@v3
       - uses: corabank/front-coverage-action/coverage@v0.0.1
         with:
           repositoryPath: ${{ vars.GITHUB_REPOSITORY }}
