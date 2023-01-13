@@ -14,5 +14,6 @@ jobs:
     steps:
       - uses: corabank/front-coverage-action/coverage@v0.0.1
         with:
+          repositoryPath: ${{ GITHUB_REPOSITORY }}
           reporterId: ${{ secrets.CC_TEST_REPORTER_ID }}
           coverageCommand: test:unit
