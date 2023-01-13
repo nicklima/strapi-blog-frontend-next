@@ -10,10 +10,8 @@ on:
 jobs:
   coverage:
     runs-on: ubuntu-latest
-    name: Run tests and upload coverage
+    name: Running corabank/front-coverage-action    
     steps:
-      #Here we pass the version of front-coverage-action tag.
-      #We can have multiple versions
       - uses: corabank/front-coverage-action/coverage@v0.0.1
         with:
           reporterId: ${{ secrets.CC_TEST_REPORTER_ID }}
