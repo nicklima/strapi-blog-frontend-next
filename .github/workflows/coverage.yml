@@ -5,15 +5,16 @@ on:
     branches: [main]
   pull_request:
     branches: [main]
+  workflow_dispatch:
 
 jobs:
   coverage:
     runs-on: ubuntu-latest
+    name: Run tests and upload coverage
     steps:
-      - name: Run tests and upload coverage
-        #Here we pass the version of front-coverage-action tag.
-        #We can have multiple versions
-        uses: corabank/front-coverage-action/coverage@v0.0.1
+      #Here we pass the version of front-coverage-action tag.
+      #We can have multiple versions
+      - uses: corabank/front-coverage-action/coverage@v0.0.1
         with:
           reporterId: ${{ secrets.CC_TEST_REPORTER_ID }}
           coverageCommand: test:unit
