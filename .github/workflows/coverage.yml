@@ -1,28 +1,19 @@
-name: CodeClimate - JEST Coverage
+name: Cora - Coverage Reporter
+
 on:
   push:
-    branches:
-      - master
-    tags:
-      - "!*" # Do not execute on tags
+    branches: [main]
   pull_request:
-    branches:
-      - master
-    paths:
-      - "!*.MD"
-  workflow_dispatch:
+    branches: [main]
+
 jobs:
   coverage:
-    name: Run tests & publish coverage to CodeClimate
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
-      - uses: actions/setup-node@master
+      - name: Run tests and upload coverage
+        #Here we pass the version of front-coverage-action tag.
+        #We can have multiple versions
+        uses: corabank/front-coverage-action/coverage@v0.0.1
         with:
-          node-version: 16.x
-      - run: npm install -g yarn
-      - run: yarn install
-      - run: yarn test:unit
-      - uses: paambaati/codeclimate-action@v3.2.0
-        env:
-          CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
+          reporterId: ${{ secrets.CC_TEST_REPORTER_ID }}
+          coverageCommand: test:unit
