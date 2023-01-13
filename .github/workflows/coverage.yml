@@ -13,7 +13,7 @@ jobs:
     name: Running corabank/front-coverage-action    
     steps:
       - uses: actions/checkout@v3
-      - uses: corabank/front-coverage-action/coverage@v0.0.1
+      - uses: corabank/front-coverage-action/coverage@v0.0.2
         with:
           repositoryPath: ${{ vars.GITHUB_REPOSITORY }}
           reporterId: ${{ secrets.CC_TEST_REPORTER_ID }}
