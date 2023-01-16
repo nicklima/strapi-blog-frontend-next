@@ -1,4 +1,4 @@
-name: Cora - Coverage Reporter
+name: Coverage Reporter
 
 on:
   push:
@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Running corabank/front-coverage-action    
     steps:
-      - uses: corabank/front-coverage-action/coverage@v0.0.2
+      - uses: corabank/front-coverage-action/coverage@v0.0.1
         with:
           reporterId: ${{ secrets.CC_TEST_REPORTER_ID }}
           coverageCommand: test:unit
